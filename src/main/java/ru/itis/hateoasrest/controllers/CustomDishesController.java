@@ -21,8 +21,8 @@ public class CustomDishesController {
 
     @PostMapping("/dishes/{dish-id}/rateDown")
     @SneakyThrows
-    public ResponseEntity<Dish> rateDown(@PathVariable("dish-id") final Long courseId){
-        val dish = dishesRepository.findById(courseId).orElseThrow(() -> new NotFoundException("Dish with id " + courseId + " not found"));
+    public ResponseEntity<Dish> rateDown(@PathVariable("dish-id") final Long dishId){
+        val dish = dishesRepository.findById(dishId).orElseThrow(() -> new NotFoundException("Dish with id " + courseId + " not found"));
         dish.rateDown();
         dishesRepository.save(dish);
         return ResponseEntity.ok(dish);
@@ -30,8 +30,8 @@ public class CustomDishesController {
     }
     @PostMapping("/dishes/{dish-id}/rateUp")
     @SneakyThrows
-    public ResponseEntity<Dish> rateUp(@PathVariable("dish-id") final Long courseId){
-        val dish = dishesRepository.findById(courseId).orElseThrow(() -> new NotFoundException("Dish with id " + courseId + " not found"));
+    public ResponseEntity<Dish> rateUp(@PathVariable("dish-id") final Long dishId){
+        val dish = dishesRepository.findById(dishId).orElseThrow(() -> new NotFoundException("Dish with id " + courseId + " not found"));
         dish.rateUp();
         dishesRepository.save(dish);
         return ResponseEntity.ok(dish);
