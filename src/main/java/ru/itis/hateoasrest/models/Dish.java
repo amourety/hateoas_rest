@@ -31,5 +31,6 @@ public class Dish {
         if (this.rate >0)
             this.rate--;
 
+
     }
 }

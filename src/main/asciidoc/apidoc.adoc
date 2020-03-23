@@ -1,0 +1,24 @@
+= Описание API по заведениям
+
+== Методы
+
+|===
+|Метод |Назначение
+
+|PUT
+|Изменение статуса заведения
+|===
+
+=== Изменение статуса заведения
+
+Можно изменить статус заведения, если он не *UNEXPECTED*
+
+.request
+include::{snippets}/change_status_place/http-request.adoc[]
+
+.response
+include::{snippets}/change_status_place/http-response.adoc[]
+
+.response-fields
+include::{snippets}/change_status_place/response-fields.adoc[]
+
