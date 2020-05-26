@@ -1,5 +1,7 @@
 package ru.itis.hateoasrest.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,6 +13,7 @@ import javax.persistence.*;
 @Builder
 @Setter
 @Getter
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = Dish.class)
 public class Dish {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dish_generator")
