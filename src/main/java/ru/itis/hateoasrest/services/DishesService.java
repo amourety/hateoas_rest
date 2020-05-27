@@ -52,6 +52,13 @@ public class DishesService {
         return Flux.merge(fluxes);
     }
 
+    public void fillDataBase(int count) {
+        for (int i = 0; i < count; i++) {
+            Dish dish = Dish.builder().cost(100L).description("f").name("testflux").rate(100).build();
+            dishesRepository.save(dish);
+        }
+    }
+
     private Flux<Dish> getAll(DishClient client) {
         return client.getAll().subscribeOn(Schedulers.elastic());
     }
